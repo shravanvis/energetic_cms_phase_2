@@ -1,0 +1,26 @@
+<!-- <p>add-prod-specification works!</p> -->
+<div class="modal-body">
+    <button (click)="close()" aria-label="Close" class="close" style="zoom: 1.2; outline: none;" type="button">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <br>
+    <br>
+    <div class="row m-4">
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                <div class="form-group">
+                    <label>Special Products</label>
+                    <select  class="form-control" [(ngModel)]="special_product_id" aria-label="Default select example">
+                        <option *ngFor="let item of specialProducts; index as i" value="{{item.id}}">{{item.name}}</option>
+                      
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="modal-footer">
+                <button (click)="save()" class="btn btn-outline-dark" type="button">save</button>
+            </div>
+        </div>
+    </div>
+</div>

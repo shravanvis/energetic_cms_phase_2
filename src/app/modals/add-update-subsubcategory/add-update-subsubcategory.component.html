@@ -1,0 +1,83 @@
+<!-- <p>add-update-subsubcategory works!</p> -->
+<!-- <p>add-update-subcategory works!</p> -->
+<!-- <p>add-update-category works!</p> -->
+<div class="m-0 p-0">
+    <div class="d-flex justify-content-end">
+        <div class="mr-auto">
+            <h4 class="m-3">Sub-Sub-category</h4>
+        </div>
+        <div>
+            <button (click)="close()" aria-label="Close" class="close m-3" style="zoom: 1.2; outline: none;"
+                type="button">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="modal-body">
+
+    <div class="form-group">
+        <label>subname</label>
+        <input [(ngModel)]="subsubname" class="form-control" placeholder="Enter subname" type="text">
+    </div>
+
+    <div class="form-group">
+        <label>description</label>
+        <textarea [(ngModel)]="description" class="form-control" placeholder="Enter description" type="text"></textarea>
+    </div>
+
+    <div style="position: relative;">
+        <label>Image size: 1298 x 1138</label>
+        <img [src]="showImage1Url"
+            style="width: 100px; height: 100px; border-radius: 10px; margin: auto; display: block;" alt="">
+        <label class="btn btn-default btn-sm center-block btn-file m-0" style="position: absolute; bottom: -5px;
+                    left: 50%;
+                    transform: translate(0%, -50%, 0%, -50%);">
+            <i class="fa fa-upload fa-2x text-white" aria-hidden="true"></i>
+            <input type="file" (change)="onselectimage1($event)" style="display: none;">
+        </label>
+    </div>
+
+    <hr>
+
+    <div style="position: relative;">
+        <img [src]="showImage2Url"
+            style="width: 100px; height: 100px; border-radius: 10px; margin: auto; display: block;" alt="">
+        <label class="btn btn-default btn-sm center-block btn-file m-0" style="position: absolute; bottom: -5px;
+                    left: 50%;
+                    transform: translate(0%, -50%, 0%, -50%);">
+            <i class="fa fa-upload fa-2x text-white" aria-hidden="true"></i>
+            <input type="file" (change)="onselectimage2($event)" style="display: none;">
+        </label>
+    </div>
+
+    <hr>
+
+    <div style="position: relative;">
+        <img [src]="showImage3Url"
+            style="width: 100px; height: 100px; border-radius: 10px; margin: auto; display: block;" alt="">
+        <label class="btn btn-default btn-sm center-block btn-file m-0" style="position: absolute; bottom: -5px;
+                    left: 50%;
+                    transform: translate(0%, -50%, 0%, -50%);">
+            <i class="fa fa-upload fa-2x text-white" aria-hidden="true"></i>
+            <input type="file" (change)="onselectimage3($event)" style="display: none;">
+        </label>
+    </div>
+
+    <hr>
+
+    <div style="position: relative;">
+        <img [src]="showbannerUrl"
+            style="width: 100px; height: 100px; border-radius: 10px; margin: auto; display: block;" alt="">
+        <label class="btn btn-default btn-sm center-block btn-file m-0" style="position: absolute; bottom: -5px;
+                    left: 50%;
+                    transform: translate(0%, -50%, 0%, -50%);">
+            <i class="fa fa-upload fa-2x text-white" aria-hidden="true"></i>
+            <input type="file" (change)="onselectbanner($event)" style="display: none;">
+        </label>
+    </div>
+
+</div>
+<div class="modal-footer">
+    <button (click)="savesubsubcats()" class="btn btn-outline-dark" type="button">Save</button>
+</div>

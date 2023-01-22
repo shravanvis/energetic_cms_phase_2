@@ -1,0 +1,50 @@
+<!-- <p>add-update-category works!</p> -->
+<div class="m-0 p-0">
+    <div class="d-flex justify-content-end">
+        <div class="mr-auto">
+            <h4 class="m-3">category</h4>
+        </div>
+        <div>
+            <button (click)="close()" aria-label="Close" class="close m-3" style="zoom: 1.2; outline: none;"
+                type="button">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="modal-body">
+
+    <div class="form-group">
+        <label>Name</label>
+        <input [(ngModel)]="cat_name" class="form-control" placeholder="Enter Name" type="text">
+    </div>
+
+    <label>Image Size: 1092 x 1092 px</label>
+    <div style="position: relative;">
+        <img [src]="showImageUrl" style="width: 100px; height: 100px; border-radius: 10px; margin: auto; display: block;"
+            alt="">
+
+        <label class="btn btn-default btn-sm center-block btn-file m-0" style="position: absolute; bottom: -5px;
+                    left: 50%;
+                    transform: translate(0%, -50%, 0%, -50%);">
+            <i class="fa fa-upload fa-2x text-white" aria-hidden="true"></i>
+            <input type="file" (change)="onselectimage($event)" style="display: none;">
+        </label>
+    </div>
+    <div style="position: relative;">
+        <label>Banner size: 1298 x 1138</label>
+        <img [src]="showBannerUrl"
+            style="width: 100px; height: 100px; border-radius: 10px; margin: auto; display: block;" alt="">
+
+        <label class="btn btn-default btn-sm center-block btn-file m-0" style="position: absolute; bottom: -5px;
+                    left: 50%;
+                    transform: translate(0%, -50%, 0%, -50%);">
+            <i class="fa fa-upload fa-2x text-white" aria-hidden="true"></i>
+            <input type="file" (change)="onselectBanner($event)" style="display: none;">
+        </label>
+    </div>
+
+</div>
+<div class="modal-footer">
+    <button (click)="savecats()" class="btn btn-outline-dark" type="button">Save</button>
+</div>

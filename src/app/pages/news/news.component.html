@@ -1,0 +1,36 @@
+<!-- <p>news works!</p> -->
+
+<button class="btn btn-sm btn-outline-primary" (click)="addnews()">Add News</button>
+
+<hr>
+
+<table class="table">
+    <thead class=" text-primary">
+        <th>
+            Title
+        </th>
+        <th>
+            Image
+        </th>
+        <th>
+            Description
+        </th>
+        <th>
+            Action
+        </th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of allnews; index as i">
+            <td> {{item.title}} </td>
+            <td><img [src]="apiService.BASE_IMAGE_URL + item.image" style="width: 50px; height: 50px" /> </td>
+            <td> {{item.description}} </td>
+            <td class="text-right">
+                <div style="display: flex;text-align: right">
+                    <p class="text-success" (click)="editnews(item)">EDIT</p>
+                    <p style="margin-left: 10px;" class="text-danger" (click)="deletenews(item.id)">
+                        DELETE</p>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>

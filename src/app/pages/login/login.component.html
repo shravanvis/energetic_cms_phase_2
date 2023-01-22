@@ -1,0 +1,33 @@
+<!-- <p>login works!</p> -->
+<div class="limiter">
+    <div class="container-login100" style="background-image: url('../../../assets/img/02.jpg');">
+        <div style="width: 100px; height: 100px; position: absolute; top: 0%; left: 0%; border-radius: 50%;color: white;font-size: x-large;font-family: auto;">
+            <!--<img src="assets/img/Logo.png" style="background: transparent;" alt="">-->Energetic
+        </div>
+        <div class="wrap-login100 p-t-30 p-b-50">
+            <span class="login100-form-title p-b-41">
+                Admin Login
+            </span>
+            <div class="login100-form p-b-33 p-t-5">
+                <div class="form-group m-2 p-3">
+                    <label> <b> Email </b></label>
+                    <input [(ngModel)]="email" class="form-control" placeholder="Enter Email"
+                        style="border: solid 1.5px black !important;" type="text" value="">
+                </div>
+                <div style="margin: -20px;"></div>
+                <div class="form-group m-2 p-3">
+                    <label><b> Password </b></label>
+                    <input [(ngModel)]="password" class="form-control" placeholder="Enter Password"
+                        style="border: solid 1.5px black !important;" type="password" value="">
+                </div>
+
+                <div class="container-login100-form-btn m-t-32">
+                    <button (click)="signin()" class="login100-form-btn">
+                        Login
+                    </button>
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+</div>

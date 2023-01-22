@@ -1,0 +1,46 @@
+<!-- <p>add-update-direction-contact works!</p> -->
+<!-- <p>add-catalogs works!</p> -->
+<!-- <p>add-update-news works!</p> -->
+<!-- <p>add-update-online-retailers works!</p> -->
+<div class="modal-body">
+    <button (click)="close()" aria-label="Close" class="close" style="zoom: 1.2; outline: none;" type="button">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+            <div class="form-group">
+                <label>title</label>
+                <input [(ngModel)]="title" class="form-control" placeholder="Enter title" type="text">
+            </div>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+            <div class="form-group">
+                <label>location</label>
+                <input [(ngModel)]="location" class="form-control" placeholder="Enter location" type="text">
+            </div>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+            <div class="form-group">
+                <label>Phone Number</label>
+                <input [(ngModel)]="fax" class="form-control" placeholder="Enter fax" type="text">
+            </div>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+            <div class="form-group">
+                <label>direction</label>
+                <input [(ngModel)]="direction" class="form-control" placeholder="Enter direction" type="text">
+            </div>
+        </div>
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="form-group">
+                <label>iframe</label>
+                <input [(ngModel)]="iframe" class="form-control" placeholder="Enter iframe" type="text">
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button (click)="savecata()" class="btn btn-outline-dark" type="button">Save</button>
+    </div>
+</div>

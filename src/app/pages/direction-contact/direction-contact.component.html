@@ -1,0 +1,42 @@
+<div class="form-group">
+    <label>Title</label>
+    <input type="text" [(ngModel)]="title" class="form-control" placeholder="Enter Title">
+</div>
+<div class="form-group">
+    <label>Description</label>
+
+    <angular-editor [placeholder]="'Enter text here...'" [(ngModel)]="description"></angular-editor>
+    <button class="btn btn-primary" (click)="save()">Save</button>
+
+
+    <div class="table">
+        <table class="table">
+            <thead class=" text-primary">
+                <tr>
+                    <th>title</th>
+                    <th>location</th>
+                    <th>Phone Number</th>
+                    <th>direction</th>
+                    <th>iframe</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let data of directions_content">
+                    <td>{{data.title}}</td>
+                    <td>{{data.location}}</td>
+                    <td>{{data.fax}}</td>
+                    <td>{{data.direction}}</td>
+                    <td>{{data.iframe}}</td>
+                    <td class="text-right">
+                        <div style="display: flex;text-align: right">
+                            <p class="text-success" (click)="edit(data)">EDIT</p>
+                            <!-- <p style="margin-left: 10px;" class="text-danger" (click)="delete(data.id)">DELETE</p> -->
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>

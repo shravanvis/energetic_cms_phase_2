@@ -1,0 +1,43 @@
+<!-- <p>distributors works!</p> -->
+<!-- <p>light-design-layout works!</p> -->
+<div class="form-group">
+    <div class="">
+        <label for="description">Description</label>
+        <textarea class="form-control" cols="30" rows="10" [(ngModel)]="description"></textarea>
+        <button class="btn btn-sm btn-outline-primary" (click)="save()">save</button>
+    </div>
+</div>
+<div class="card">
+    <div class="card-body">
+        <table class="table table-responsive">
+            <thead class=" text-primary">
+                <th>name</th>
+                <th>email</th>
+                <th>phone</th>
+                <th>business_name</th>
+                <th>message</th>
+                <th>location</th>
+                <th>product_carry</th>
+                <th>customer_focus</th>
+                <th>annual_revenue</th>
+                <th>role</th>
+                <th>created_at</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of data; index as i">
+                    <td> {{item.name}} </td>
+                    <td> {{item.email}} </td>
+                    <td> {{item.phone}} </td>
+                    <td> {{item.business_name}} </td>
+                    <td> {{item.message}} </td>
+                    <td> {{item.location}} </td>
+                    <td> {{item.product_carry}} </td>
+                    <td> {{item.customer_focus}} </td>
+                    <td> {{item.annual_revenue}} </td>
+                    <td> {{item.role}} </td>
+                    <td> {{item.created_at}} </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

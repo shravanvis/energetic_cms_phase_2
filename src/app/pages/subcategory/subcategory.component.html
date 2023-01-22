@@ -1,0 +1,74 @@
+<!-- <p>subcategory works!</p> -->
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <div style="display: flex">
+                    <h4 style="flex-grow: 1" class="card-title"> subcategory</h4>
+                    <div class="update ml-auto mr-auto">
+                        <button type="submit" (click)="addsubcategory()" class="btn btn-primary btn-round">Add
+                            subcategory</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead class=" text-primary">
+                            <th>
+                                subname
+                            </th>
+                            <!-- <th>
+                                description
+                            </th> -->
+                            <th>
+                                Image
+                            </th>
+                            <th>
+                                Banner
+                            </th>
+                            <th>
+                                Action
+                            </th>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of list_subcategory; index as i">
+                                <td> {{item.subname}} </td>
+                                <!-- <td> {{item.description}} </td> -->
+                                <td> <img [src]="apiService.BASE_IMAGE_URL + item.image"
+                                        style="width: 100px; height: 100px" /> </td>
+
+                                <td> <img [src]="apiService.BASE_IMAGE_URL + item.banner"
+                                        style="width: 200px; height: 100px" /> </td>
+
+                                <td class="text-right">
+                                    <div style="display: flex;text-align: right">
+                                        <p class="text-success" (click)="editsubcategory(item)">EDIT</p>
+                                        <p style="margin-left: 10px;" class="text-danger"
+                                            (click)="deletesubcategory(item.id)">
+                                            DELETE</p>
+                                        <p style="margin-left: 10px;" class="text-warning"
+                                            (click)="AddsubSubcat(item.category_id,item.id)">
+                                            SUB-SUB CATEGORY</p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<!--modals starts from here-->
+
+
+<!--<button class="btn btn-lg btn-outline-primary" (click)="openEditTeacher()">Launch demo modal</button>-->
+
+<hr>
+
+<!--<pre>{{ closeResult }}</pre>-->
+<!--modals end from here-->

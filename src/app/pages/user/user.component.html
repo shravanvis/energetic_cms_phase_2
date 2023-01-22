@@ -1,0 +1,66 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <div style="display: flex">
+                    <h4 style="flex-grow: 1" class="card-title">Users List</h4>
+                    <!--<div class="update ml-auto mr-auto">
+                        <button type="submit" (click)="addContact()" class="btn btn-primary btn-round">Add Contact</button>
+                    </div>-->
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead class=" text-primary">
+                        <th>
+                            Name
+                        </th>
+                        <th>
+                            Email
+                        </th>
+                        <th>
+                            Phone
+                        </th>
+                        <th>
+                            Type
+                        </th>
+                       
+                        <th >
+                            Action
+                        </th>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor="let item of list_user; index as i">
+                            <td> {{item.firstName | titlecase}} </td>
+                            <td> {{item.email}} </td>
+                            <td> {{item.phone}} </td>
+                            <td> {{item.userType | titlecase}} </td>
+                            
+                           
+                            <td class="text-right">
+                                <div style="display: flex;text-align: right">
+                                   <!-- <p class="text-success" (click)="editContact(item)">EDIT</p>-->
+                                    <p style="margin-left: 10px;" class="text-danger" (click)="deleteUser(item.id)">DELETE</p>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<!--modals starts from here-->
+
+
+<!--<button class="btn btn-lg btn-outline-primary" (click)="openEditTeacher()">Launch demo modal</button>-->
+
+<hr>
+
+<!--<pre>{{ closeResult }}</pre>-->
+<!--modals end from here-->

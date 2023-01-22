@@ -1,0 +1,70 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <div style="display: flex">
+                    <h4 style="flex-grow: 1" class="card-title">Applications</h4>
+                    <div class="update ml-auto mr-auto">
+                        <button type="submit" (click)="addApplications()" class="btn btn-primary btn-round">Add
+                            Applications</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead class=" text-primary">
+                            <th>
+                                Title
+                            </th>
+
+                            <th>
+                                Description
+                            </th>
+                            <!-- <th>
+                                Button Name
+                            </th> -->
+
+                            <th>
+                                Banner
+                            </th>
+                            <th>
+                                Action
+                            </th>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of list_applications; index as i">
+                                <td> {{item.title}} </td>
+                                <td [innerHTML]="item.description"> </td>
+
+                                <!-- <td> {{item.button_name}} </td> -->
+
+                                <td> <img [src]="item.image" style="width: 50px; height: 50px" /> </td>
+
+                                <td class="text-right">
+                                    <div style="display: flex;text-align: right">
+                                        <p class="text-success" (click)="editApplications(item)">EDIT</p>
+                                        <p style="margin-left: 10px;" class="text-danger"
+                                            (click)="deleteApplications(item.id)">DELETE</p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<!--modals starts from here-->
+
+
+<!--<button class="btn btn-lg btn-outline-primary" (click)="openEditTeacher()">Launch demo modal</button>-->
+
+<hr>
+
+<!--<pre>{{ closeResult }}</pre>-->
+<!--modals end from here-->

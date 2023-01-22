@@ -1,0 +1,152 @@
+<div class="card">
+    <div class="card-body">
+
+        <div class="row">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+                <div class="">
+                    <label for="">Product Bulk Upload</label>
+                    <br>
+                    <label class="btn btn-default btn-sm center-block btn-file m-0">
+                        <input type="file" (change)="onselectimage1($event)">
+                    </label>
+                </div>
+                <div class="form-group">
+                    <button (click)="save1()" class="btn btn-sm btn-primary btn-round" [disabled]="!image1">Import
+                        Product</button>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+                <div class="">
+                    <label for="">Product Specification Bulk Upload</label>
+                    <label class="btn btn-default btn-sm center-block btn-file m-0">
+                        <input type="file" (change)="onselectimage2($event)">
+                    </label>
+
+                </div>
+                <div class="form-group">
+                    <button (click)="save2()" class="btn btn-sm btn-primary btn-round" [disabled]="!image2">Import
+                        Product
+                        Specification</button>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+                <div class="">
+                    <label for="">Product Dimension Bulk Upload</label>
+                    <label class="btn btn-default btn-sm center-block btn-file m-0">
+                        <input type="file" (change)="onselectimage3($event)">
+                    </label>
+
+                </div>
+                <div class="form-group">
+                    <button (click)="save3()" class="btn btn-sm btn-primary btn-round" [disabled]="!image3">Import
+                        Product Dimension</button>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+                <div class="">
+                    <label for="">Product Levels Bulk Upload</label>
+                    <label class="btn btn-default btn-sm center-block btn-file m-0">
+                        <input type="file" (change)="onselectimage4($event)">
+                    </label>
+
+                </div>
+                <div class="form-group">
+                    <button (click)="save4()" class="btn btn-sm btn-primary btn-round" [disabled]="!image4">Import
+                        Product Level</button>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+                <div class="">
+                    <label for="">Product Retailers Bulk Upload</label>
+                    <label class="btn btn-default btn-sm center-block btn-file m-0">
+                        <input type="file" (change)="onselectimage5($event)">
+                    </label>
+
+                </div>
+                <div class="form-group">
+                    <button (click)="save5()" class="btn btn-sm btn-primary btn-round" [disabled]="!image5">Import
+                        Product Retailers</button>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="form-group">
+            <label>Category</label>
+            <select class="form-control" [(ngModel)]="category_id" (change)="oncatchange()">
+                <option selected>select category_id</option>
+                <option [value]="data.id" *ngFor="let data of datacat">{{data.name}}, ({{data.id}})</option>
+            </select>
+        </div>
+
+        <br>
+
+        <div class="form-group">
+            <label>Sub Cat</label>
+            <select class="form-control" [(ngModel)]="sub_cat_id" (change)="onsubcatchange()">
+                <option selected>select sub_cat_id</option>
+                <option [value]="data.id" *ngFor="let data of allsubcat">{{data.subname}} , ({{data.id}})</option>
+            </select>
+        </div>
+
+        <br>
+
+        <div class="form-group">
+            <label>Sub Sub Cat</label>
+            <select class="form-control" [(ngModel)]="subsub_cat_id">
+                <option selected>select subsub_cat_id</option>
+                <option [value]="data.id" *ngFor="let data of allsubsubcat">{{data.subsubname}} , ({{data.id}})
+                </option>
+            </select>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+            <table class="table table-responsive">
+                <thead class=" text-primary">
+                    <tr>
+                        <th>Applications</th>
+                        <th>Id</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let items of dataApplication; index as i">
+                        <td> {{items.title}} </td>
+                        <td> {{items.id}} </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+            <table class="table table-responsive">
+                <thead class=" text-primary">
+                    <tr>
+                        <th>Levels</th>
+                        <th>Id</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let items of allLevels; index as i">
+                        <td> {{items.name}} </td>
+                        <td> {{items.id}} </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <hr>
+        <table class="table table-responsive">
+            <thead class=" text-primary">
+                <tr>
+                    <th>Product</th>
+                    <th>Id</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let items of datapro; index as i">
+                    <td> {{items.product_name}} </td>
+                    <td> {{items.id}} </td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

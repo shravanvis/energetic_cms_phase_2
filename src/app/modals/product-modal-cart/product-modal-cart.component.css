@@ -1,0 +1,13 @@
+hr {
+    border          : 0;
+    clear           : both;
+    display         : block;
+    width           : 96%;
+    background-color: black;
+    height          : 1px;
+}
+
+label {
+    font-size  : 1em;
+    font-weight: bold;
+}

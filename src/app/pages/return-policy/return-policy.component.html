@@ -1,0 +1,40 @@
+<!-- <p>return-policy works!</p> -->
+<!-- <p>catalogs works!</p> -->
+<!-- <p>category works!</p> -->
+<div class="card">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table">
+                <thead class=" text-primary">
+                    <th>
+                        PDF
+                    </th>
+                    <th>
+                        Action
+                    </th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of list_pdf; index as i">
+                        <td> {{item.image}} </td>
+                        <td class="text-right">
+                            <div style="display: flex;text-align: right">
+                                <p style="margin-left: 10px;" class="text-danger" (click)="deletepdf(item.id)">
+                                    DELETE</p>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="card" *ngIf="list_pdf.length == 0">
+    <div class="card-body">
+        <label for="">Return Policy</label>
+        <br>
+        <input type="file" (change)="selectpdf($event)">
+        <button type="submit" (click)="addpdf()" class="btn btn-primary btn-round">Add
+            return-policy</button>
+    </div>
+</div>

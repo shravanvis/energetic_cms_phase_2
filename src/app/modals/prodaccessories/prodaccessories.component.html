@@ -1,0 +1,61 @@
+<!-- <p>prodaccessories works!</p> -->
+<div class="card">
+    <div class="card-header">
+        <div class="float-lg-left">
+            <button type="submit" (click)="addac()" class="btn btn-primary btn-round">Add
+                Accessories</button>
+        </div>
+        <div class="float-lg-right">
+            <button (click)="close()" aria-label="Close" class="close" style="zoom: 1.2; outline: none;" type="button">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </div>
+    <div class="card-body">
+
+        <hr>
+        <div class="row" *ngFor="let item of allAccessories; index as i;">
+            <div class="col-12">
+                <label>{{i+1}}). &nbsp;</label>
+                <label>name</label>
+                <p>{{item.name}}</p>
+            </div>
+
+            <div class="col-12">
+                <label>price</label>
+                <p>{{item.price}}</p>
+            </div>
+
+            <br>
+
+            <div class="col-12">
+                <label>description</label>
+                <p>{{item.description}}</p>
+            </div>
+
+            <br>
+
+            <div class="col-12">
+                <label>Image</label>
+                <img [src]="apiService.BASE_IMAGE_URL + item.image" style="width: 100%; height: 200px" loading="lazy" />
+            </div>
+
+            <button type="submit" (click)="deleteac(item.id)" class="btn btn-danger btn-sm m-auto d-block btn-round">
+                delete ac</button>
+            <button type="submit" (click)="editac(item)" class="btn btn-warning btn-sm m-auto d-block btn-round">
+                Edit ac</button>
+            <br>
+        </div>
+    </div>
+</div>
+
+
+<!--modals starts from here-->
+
+
+<!--<button class="btn btn-lg btn-outline-primary" (click)="openEditTeacher()">Launch demo modal</button>-->
+
+<hr>
+
+<!--<pre>{{ closeResult }}</pre>-->
+<!--modals end from here-->

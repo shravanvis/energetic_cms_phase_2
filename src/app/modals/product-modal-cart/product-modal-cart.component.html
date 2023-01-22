@@ -1,0 +1,142 @@
+<!-- <p>product-modal-cart works!</p> -->
+<div class="modal-body">
+    <button (click)="close()" aria-label="Close" class="close" style="zoom: 1.2; outline: none;" type="button">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <br>
+    <br>
+    <!-- <p>products works!</p> -->
+    <!-- <p>catalogs works!</p> -->
+    <!-- <p>category works!</p> -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <hr>
+                    <div *ngFor="let item of Product; index as i">
+                        <div class="row" *ngIf="item.product_name">
+                            <div class="col-3">
+                                <label>{{i+1}}). &nbsp;</label>
+
+                                <label>Product Name</label>
+                                <p>{{item.product_name}}</p>
+
+                                <label>Product qty</label>
+                                <p>{{item.qty}}</p>
+
+                                <label>title</label>
+                                <p>{{item.title}}</p>
+                            </div>
+                            <div class="col-3">
+                                <label>Image</label>
+                                <img [src]="apiService.BASE_IMAGE_URL + item.image"
+                                    style="width: 100%; height: 200px" />
+                            </div>
+                            <div class="col-2">
+                                <label>Featured</label>
+                                <p *ngIf="item.is_featured == '1'">yes</p>
+                                <p *ngIf="item.is_featured == '0'">No</p>
+                            </div>
+                            <div class="col-2">
+                                <label>created_at</label>
+                                <p>{{item.created_at | date}}</p>
+                            </div>
+                            <div class="col-1">
+                                <label>Active</label>
+                                <p *ngIf="item.is_active == '1'">yes</p>
+                                <p *ngIf="item.is_active == '0'">No</p>
+                            </div>
+                            <div class="col-4">
+                                <label>Category Name</label>
+                                <p>{{item.name}}</p>
+                            </div>
+                            <div class="col-4">
+                                <label>Sub Sub Category Name</label>
+                                <p>{{item.subsubname}}</p>
+                            </div>
+                            <div class="col-4">
+                                <label>subname</label>
+                                <p>{{item.subname}}</p>
+                            </div>
+                            <div class="col-6">
+                                <label>Features</label>
+                                <p>{{item.features}}</p>
+                            </div>
+                            <div class="col-6">
+                                <label>Application</label>
+                                <p>{{item.application}}</p>
+                            </div>
+                            <div class="col-6">
+                                <label>Description</label>
+                                <p [innerHTML]="item.description"></p>
+                            </div>
+                            <div class="col-6">
+                            </div>
+                            <div class="col-4">
+                                <label>PHOTOMETRIC DATA 1</label>
+                                <img [src]="apiService.BASE_IMAGE_URL + item.image2"
+                                    style="width: 100%; height: 200px" />
+                            </div>
+
+                            <div class="col-4">
+                                <label>PHOTOMETRIC DATA 2</label>
+                                <img [src]="apiService.BASE_IMAGE_URL + item.image3"
+                                    style="width: 100%; height: 200px" />
+                            </div>
+
+                            <div class="col-4">
+                                <label>PHOTOMETRIC DATA 3</label>
+                                <img [src]="apiService.BASE_IMAGE_URL + item.image4"
+                                    style="width: 100%; height: 200px" />
+                            </div>
+                            <hr>
+                            <br>
+                        </div>
+                    </div>
+                    <div *ngFor="let item of Product; index as i">
+                        <div class="row" *ngIf="item.name">
+
+                            <div class="col-3">
+                                <label>{{i+1}}). &nbsp;</label>
+
+                                <label>Accessories Name</label>
+                                <p>{{item.name}}</p>
+
+                                <label>Accessories qty</label>
+                                <p>{{item.qty}}</p>
+
+                            </div>
+                            <div class="col-3">
+                                <label>Image</label>
+                                <img [src]="apiService.BASE_IMAGE_URL + item.image"
+                                    style="width: 100%; height: 200px" />
+                            </div>
+                            <div class="col-2">
+                                <label>created_at</label>
+                                <p>{{item.created_at | date}}</p>
+                            </div>
+                            <div class="col-6">
+                                <label>Description</label>
+                                <p>{{item.description}}</p>
+                            </div>
+                            <hr>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!--modals starts from here-->
+
+
+    <!--<button class="btn btn-lg btn-outline-primary" (click)="openEditTeacher()">Launch demo modal</button>-->
+
+    <hr>
+
+    <!--<pre>{{ closeResult }}</pre>-->
+    <!--modals end from here-->
+</div>

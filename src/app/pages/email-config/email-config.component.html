@@ -1,0 +1,21 @@
+<div class="form-group">
+    <label>Host</label>
+    <input type="text" [(ngModel)]="host" class="form-control" placeholder="Enter Host">
+</div>
+<div class="form-group">
+ <label>Port</label>
+ <input type="text" [(ngModel)]="port" class="form-control" placeholder="Enter Port">
+</div>
+<div class="form-group">
+    <label>User</label>
+    <input type="text" [(ngModel)]="user" class="form-control" placeholder="Enter User">
+   </div>
+   <div class="form-group">
+    <label>Password</label>
+    <input type="text" [(ngModel)]="password" class="form-control" placeholder="Enter Password">
+   </div>
+   <div class="form-group">
+    <label>Sender Email</label>
+    <input type="text" [(ngModel)]="sender_email" class="form-control" placeholder="Enter Sender Mail">
+   </div>
+<button class="btn btn-primary" (click)="save()">Save</button>

@@ -1,0 +1,53 @@
+<!-- <p>login1 works!</p> -->
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <div style="display: flex">
+                    <h4 style="flex-grow: 1" class="card-title">Loginurl</h4>
+                    <div class="update ml-auto mr-auto">
+                        <button type="submit" (click)="addLoginurl()" class="btn btn-primary btn-round">Add Loginurl</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead class=" text-primary">
+                            <th>
+                                Url
+                            </th>
+                            <th>
+                                Action
+                            </th>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of list_loginurl">
+                                <td> {{item.url}} </td>
+                                <td class="text-right">
+                                    <div style="display: flex;text-align: right">
+                                        <p class="text-success" (click)="editLoginurl(item)">EDIT</p>
+                                        <p style="margin-left: 10px;" class="text-danger" (click)="deleteLoginurl(item.id)">DELETE</p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<!--modals starts from here-->
+
+
+<!--<button class="btn btn-lg btn-outline-primary" (click)="openEditTeacher()">Launch demo modal</button>-->
+
+<hr>
+
+<!--<pre>{{ closeResult }}</pre>-->
+<!--modals end from here-->

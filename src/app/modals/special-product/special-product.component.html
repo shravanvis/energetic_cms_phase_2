@@ -1,0 +1,52 @@
+<!-- <p>prodallspecs works!</p> -->
+<!-- <p>add-prod-specification works!</p> -->
+<div class="m-0 p-0">
+    <div class="card">
+        <div class="card-header">
+            <div style="display: flex">
+                <h4 style="flex-grow: 1" class="card-title">Special Product</h4>
+                <div class="update ml-auto mr-auto">
+                    <button type="submit" (click)="add()" class="btn btn-primary btn-round">Add
+                        Special Product</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+
+    </div>
+</div>
+<div class="modal-body">
+    <div class="table-responsive">
+        <table class="table">
+            <thead class=" text-primary">
+                <th>
+                    Name
+                </th>
+                
+                <th>
+                    Action
+                </th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of Data; index as i">
+                    <td> {{item.name}} </td>
+                    
+                    <td class="text-right">
+                        <div style="display: flex;text-align: right">
+                            <p class="text-success" (click)="edit(item)">EDIT</p>
+                            <p style="margin-left: 10px;" class="text-danger" (click)="delete(item.id)">
+                                DELETE</p>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="modal-footer">
+        <button (click)="close()" class="btn btn-primary btn-round" type="button">
+            Close
+        </button>
+    </div>
+</div>

@@ -1,0 +1,53 @@
+<!-- <p>prodlevels works!</p> -->
+<div class="m-0 p-0">
+    <div class="card">
+        <div class="card-header">
+            <div style="display: flex">
+                <h4 style="flex-grow: 1" class="card-title">Levels</h4>
+                <div class="update ml-auto mr-auto">
+                    <button type="submit" (click)="addnew()" class="btn btn-primary btn-round">Add
+                        Levels</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+
+    </div>
+</div>
+<div class="modal-body">
+    <div class="table-responsive">
+        <table class="table">
+            <thead class=" text-primary">
+                <th>
+                    Name
+                </th>
+                <th>
+                    Price
+                </th>
+                <th>
+                    Action
+                </th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of levels; index as i">
+                    <td> {{item.level_name}} </td>
+                    <td> {{item.price}} </td>
+                    <td class="text-right">
+                        <div style="display: flex;text-align: right">
+                            <p class="text-success" (click)="editlevel(item)">EDIT</p>
+                            <p style="margin-left: 10px;" class="text-danger" (click)="deletelevel(item.id)">
+                                DELETE</p>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="modal-footer">
+        <button (click)="close()" class="btn btn-primary btn-round" type="button">
+            Close
+        </button>
+    </div>
+</div>

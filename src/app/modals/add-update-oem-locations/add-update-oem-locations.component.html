@@ -1,0 +1,51 @@
+<div class="m-0 p-0">
+    <div class="d-flex justify-content-end">
+        <div class="mr-auto">
+            <h4 class="m-3">Oem Locations</h4>
+        </div>
+        <div>
+            <button (click)="close()" aria-label="Close" class="close m-3" style="zoom: 1.2; outline: none;"
+                type="button">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="modal-body">
+
+    <div class="form-group">
+        <label>Headquater</label>
+        <input [(ngModel)]="headquater" class="form-control" placeholder="Enter Headquater" type="text">
+    </div>
+    <div class="form-group">
+        <label>Phone</label>
+        <input [(ngModel)]="phone" class="form-control" placeholder="Enter Phone Number" type="text">
+    </div>
+    <div class="form-group">
+        <label>Fax</label>
+        <input [(ngModel)]="fax" class="form-control" placeholder="Enter Fax" type="text">
+    </div>
+
+    <div class="form-group">
+        <label>Location</label>
+        <input [(ngModel)]="location" class="form-control" placeholder="Enter Location" type="text">
+    </div>
+
+
+    <div style="position: relative;">
+        <label>Image Size: 240 x 170 px</label>
+        <img [src]="showImageUrl"
+            style="width: 100px; height: 100px; border-radius: 10px; margin: auto; display: block;" alt="">
+
+        <label class="btn btn-default btn-sm center-block btn-file m-0" style="position: absolute; bottom: -5px;
+                    left: 50%;
+                    transform: translate(0%, -50%, 0%, -50%);">
+            <i class="fa fa-upload fa-2x text-white" aria-hidden="true"></i>
+            <input type="file" (change)="selectImage($event)" style="display: none;">
+        </label>
+    </div>
+
+</div>
+<div class="modal-footer">
+    <button (click)="saveOemLocations()" class="btn btn-outline-dark" type="button">Save</button>
+</div>

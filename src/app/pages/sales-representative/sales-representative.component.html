@@ -1,0 +1,133 @@
+<!-- <p>sales-representative works!</p> -->
+<!-- <p>subcategory works!</p> -->
+<div class="row">
+    <div class="col-md-12">
+        <div class="card p-2">
+            <div class="card-header">
+            </div>
+
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="form-group">
+                        <label>Agency Name</label>
+                        <input [(ngModel)]="agency_name" class="form-control" placeholder="Enter Name" type="text">
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="form-group">
+                        <label>Territory Expressed</label>
+                        <input [(ngModel)]="territory_expressed" class="form-control"
+                            placeholder="Enter Territory Expressed" type="text">
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="form-group">
+                        <label>Principle Name</label>
+                        <input [(ngModel)]="principle_name" class="form-control" placeholder="Enter Principle Name"
+                            type="text">
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="form-group">
+                        <label>website</label>
+                        <input [(ngModel)]="website" class="form-control" placeholder="Enter website" type="text">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="form-group">
+                        <label>Address</label>
+                        <input [(ngModel)]="address" class="form-control" placeholder="Enter Address" type="text">
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input [(ngModel)]="phone" class="form-control" placeholder="Enter Phone Number" type="text">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="form-group">
+                        <label>select state</label>
+                        <select class="form-control" aria-label="Default select example" [(ngModel)]="statecode">
+                            <!-- <option>Open this select menu</option> -->
+                            <option *ngFor="let data of statearray" [value]="data.abbreviation">{{data.name}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input [(ngModel)]="email" class="form-control" placeholder="Enter Email" type="email">
+                    </div>
+                </div>
+                <div class="update ml-auto mr-auto">
+                    <button *ngIf="addbtn" type="submit" (click)="addrep()" class="btn btn-primary btn-round">Add
+                        Sales Representative</button>
+                    <button *ngIf="updatebtn" type="submit" (click)="updaterep()"
+                        class="btn btn-primary btn-round">Update
+                        Sales Representative</button>
+                </div>
+            </div>
+
+            <!-- <div class="form-group">
+                <label>state</label>
+                <input [(ngModel)]="state" class="form-control" placeholder="Enter state" type="text">
+            </div> -->
+
+            <hr>
+            <br>
+
+
+            <table class="table">
+                <thead class=" text-primary">
+                    <th>Agency Name</th>
+                    <th>Territory Expressed</th>
+                    <th>Principle Name</th>
+                    <th>website</th>
+                    <th>Address</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>State Code</th>
+                    <th>Action</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of Representatives; index as i">
+                        <td> {{item.name}} </td>
+                        <td> {{item.territory}} </td>
+                        <td> {{item.principle_name}} </td>
+                        <td> {{item.companyname}} </td>
+                        <td> {{item.address}} </td>
+                        <td> {{item.email}} </td>
+                        <td> {{item.phone}} </td>
+                        <td> {{item.statecode}} </td>
+                        <td class="text-right">
+                            <div style="display: flex;text-align: right">
+                                <p class="text-success" (click)="editret(item)">EDIT</p>
+                                <p style="margin-left: 10px;" class="text-danger" (click)="deleteret(item.id)">
+                                    DELETE</p>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+
+<!--modals starts from here-->
+
+
+<!--<button class="btn btn-lg btn-outline-primary" (click)="openEditTeacher()">Launch demo modal</button>-->
+
+<hr>
+
+<!--<pre>{{ closeResult }}</pre>-->
+<!--modals end from here-->

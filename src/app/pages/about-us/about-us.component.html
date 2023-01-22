@@ -1,0 +1,58 @@
+<!-- <p>about-us works!</p> -->
+
+
+<div class="container">
+    <button type="submit" (click)="addabout()" class="btn btn-primary btn-round">Add
+        about us section</button>
+    <div class="card">
+        <div class="card-body">
+            <div *ngFor="let item of aboutus; index as i">
+                <label>Title</label>
+                <br>
+                <p>{{item.aboutus.title}}</p>
+                <label>Description</label>
+                <br>
+                <p [innerHTML]="item.aboutus.description"></p>
+                <label>Image Size: 1440 x 414 px</label>
+                <div class="row">
+                    <div class="col-auto" *ngFor="let data of item.images; index as i">
+                        <img [src]="apiService.BASE_IMAGE_URL + data.image" style="width: 400px; height: 200px;" alt="">
+                        <br>
+                        <button type="submit" (click)="deleteimage(data.id)"
+                            class="btn btn-sm btn-danger btn-round">Delete</button>
+                    </div>
+                </div>
+                <button type="submit" (click)="addimages(content , item.aboutus.id)"
+                    class="btn btn-sm btn-primary btn-round">Add Images</button>
+                <br>
+                <button type="submit" (click)="editabout(item.aboutus)" class="btn btn-sm btn-warning btn-round">Edit
+                    section</button>
+                <hr>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Images</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+
+        <div style="position: relative;">
+            <img [src]="showImageUrl"
+                style="width: 100px; height: 100px; border-radius: 10px; margin: auto; display: block;" alt="">
+            <label class="btn btn-default btn-sm center-block btn-file m-0" style="position: absolute; bottom: -5px;
+                        left: 50%;
+                        transform: translate(0%, -50%, 0%, -50%);">
+                <i class="fa fa-upload fa-2x text-white" aria-hidden="true"></i>
+                <input type="file" (change)="selectImage($event)" style="display: none;">
+            </label>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="saveImages()">Save</button>
+    </div>
+</ng-template>

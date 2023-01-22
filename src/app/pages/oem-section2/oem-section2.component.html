@@ -1,0 +1,11 @@
+<!-- <p>privacy-policy works!</p> -->
+ <div class="form-group">
+        <label>Title</label>
+        <input type="text" [(ngModel)]="title" class="form-control" placeholder="Enter Title">
+    </div>
+<div class="form-group">
+	 <label>Description</label>
+    <!-- <label>Terms And Conditions</label> -->
+    <angular-editor [placeholder]="'Enter text here...'" [(ngModel)]="description"></angular-editor>
+    <button class="btn btn-primary" (click)="save()">Save</button>
+</div>

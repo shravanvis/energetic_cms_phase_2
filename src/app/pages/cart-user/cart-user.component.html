@@ -1,0 +1,42 @@
+<!-- <p>cart-user works!</p> -->
+<!-- <p>light-design-layout works!</p> -->
+<div class="card">
+    <div class="card-body">
+        <table class="table table-responsive">
+            <thead class=" text-primary">
+                <th>name</th>
+                <th>email</th>
+                <th>phone</th>
+                <th>company_name</th>
+                <th>company type</th>
+                <th>job name</th>
+                <th>job state</th>
+                <th>rep</th>
+                <th>estimate order release</th>
+                <th>estimate order delivery</th>
+                <th>promo code</th>
+                <th>comments</th>
+                <th>products</th>
+                <th>created at</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of data; index as i">
+                    <td> {{item.name}} </td>
+                    <td> {{item.email}} </td>
+                    <td> {{item.phone}} </td>
+                    <td> {{item.company_name}} </td>
+                    <td> {{item.company_type}} </td>
+                    <td> {{item.job_name}} </td>
+                    <td> {{item.job_state}} </td>
+                    <td> {{item.rep}} </td>
+                    <td> {{item.estimate_order_release}} </td>
+                    <td> {{item.estimate_order_delivery}} </td>
+                    <td> {{item.promo_code}} </td>
+                    <td> {{item.comments}} </td>
+                    <td (click)="openProduct(item.product)"> open </td>
+                    <td> {{item.created_at | date}} </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

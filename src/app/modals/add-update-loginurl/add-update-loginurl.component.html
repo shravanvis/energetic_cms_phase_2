@@ -1,0 +1,23 @@
+<div class="m-0 p-0">
+    <div class="d-flex justify-content-end">
+        <div class="mr-auto">
+            <h4 class="m-3">Login Url</h4>
+        </div>
+        <div>
+            <button (click)="close()" aria-label="Close" class="close m-3" style="zoom: 1.2; outline: none;"
+                type="button">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="modal-body">
+
+    <div class="form-group">
+        <label>Login URL</label>
+        <!-- <input type="text" [(ngModel)]="url" class="form-control" placeholder="Enter Url"> -->
+    </div>
+</div>
+<div class="modal-footer">
+    <button (click)="saveLoginurl()" class="btn btn-outline-dark" type="button">Save</button>
+</div>

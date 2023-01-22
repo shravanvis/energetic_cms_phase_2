@@ -1,0 +1,16 @@
+.tabs_btn {
+    background-color: transparent;
+    border          : solid 2px #2aa8e0;
+    margin          : auto 5px auto 0px;
+    font-size       : 13px;
+    font-weight     : 600;
+    border-radius   : 10px !important;
+    white-space     : nowrap;
+    width           : 150px;
+    color           : black;
+}
+
+.active {
+    background-color: #2aa8e0;
+    color           : white;
+}

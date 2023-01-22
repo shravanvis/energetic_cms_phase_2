@@ -1,0 +1,160 @@
+<!-- <p>products works!</p> -->
+<!-- <p>catalogs works!</p> -->
+<!-- <p>category works!</p> -->
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <div class="float-lg-right">
+                    <button type="submit" (click)="addcata()" class="btn btn-primary btn-round">Add
+                        products</button>
+                    <button type="submit" (click)="addResour()" class="btn btn-primary btn-round">Add Global
+                        Resources</button>
+                </div>
+            </div>
+            <div class="card-body">
+                <input class="form-control search_input" [(ngModel)]="search" placeholder="Search by Product Name">
+
+                <hr>
+                <div class="row" *ngFor="let item of list_prod | search:'id,product_name':search; index as i;">
+                    <div class="col-3">
+                        <label>{{i+1}}). &nbsp;</label>
+
+                        <label>Product Name</label>
+                        <p>{{item.product_name}}</p>
+
+                        <label>title</label>
+                        <p>{{item.title}}</p>
+
+                        <label>Status</label>
+                        <p *ngIf="item.is_active == 0" style="color: red">Inactive</p>
+                        <p *ngIf="item.is_active == 1" style="color: green">Active</p>
+                    </div>
+                    <div class="col-3">
+                        <label>Image</label>
+                        <img [src]="apiService.BASE_IMAGE_URL + item.image" style="width: 100%; height: 200px"
+                            loading="lazy" />
+                    </div>
+                    <div class="col-2">
+                        <label>Featured</label>
+                        <p *ngIf="item.is_featured == '1'">yes</p>
+                        <p *ngIf="item.is_featured == '0'">No</p>
+                    </div>
+                    <div class="col-2">
+                        <label>created_at</label>
+                        <p>{{item.created_at | date}}</p>
+                    </div>
+                    <div class="col-1">
+                        <label>Active</label>
+                        <p *ngIf="item.is_active == '1'">yes</p>
+                        <p *ngIf="item.is_active == '0'">No</p>
+                    </div>
+                    <div class="col-4">
+                        <label>Category Name</label>
+                        <p>{{item.name}}</p>
+                    </div>
+                    <div class="col-4">
+                        <label>Sub Sub Category Name</label>
+                        <p>{{item.subsubname}}</p>
+                    </div>
+                    <div class="col-4">
+                        <label>subname</label>
+                        <p>{{item.subname}}</p>
+                    </div>
+                    <div class="col-6">
+                        <label>Features</label>
+                        <p [innerHTML]="item.features"></p>
+                    </div>
+                    <div class="col-6">
+                        <label>Application</label>
+                        <p [innerHTML]="item.application"></p>
+                    </div>
+                    <div class="col-6">
+                        <label>Description</label>
+                        <p [innerHTML]="item.description"></p>
+                    </div>
+                    <div class="col-6" *ngIf="item.banner != null">
+                        <label>Banner</label>
+                        <br>
+                        <img [src]="apiService.BASE_IMAGE_URL + item.banner" style="width: 400px; height: 200px" />
+                    </div>
+                    <div class="col-6"></div>
+                    <div class="col-auto">
+                        <button type="submit" (click)="addSpecialPro(item.id)" class="btn btn-success btn-round">
+                            Special Product</button>
+                    </div>
+                    <div class="col-auto">
+                        <button type="submit" (click)="addspec(item.id)" class="btn btn-success btn-round">
+                            Specification</button>
+                    </div>
+                    <div class="col-auto">
+                        <button type="submit" (click)="addlevels(item.id)" class="btn btn-success btn-round">
+                            Levels</button>
+                    </div>
+                    <div class="col-auto">
+                        <button type="submit" (click)="addres(item.id)" class="btn btn-success btn-round">
+                            Resources</button>
+                    </div>
+                    <div class="col-auto">
+                        <button type="submit" (click)="adddim(item.id)" class="btn btn-success btn-round">
+                            Dimension</button>
+                    </div>
+                    <div class="col-auto">
+                        <button type="submit" (click)="adddim(item.id)" class="btn btn-success btn-round">
+                            Dimension</button>
+                    </div>
+                    <div class="col-auto">
+                        <button type="submit" (click)="addAccessories(item.id)" class="btn btn-success btn-round">
+                            Add Accessories</button>
+                    </div>
+                    <div class="col-auto">
+                        <button type="submit" (click)="addRetailer(item.id)" class="btn btn-primary btn-round">
+                            add Retailer</button>
+                    </div>
+                    <div class="col-auto">
+                        <button type="submit" (click)="updateprod(item)" class="btn btn-primary btn-round">
+                            update prod</button>
+                    </div>
+                    <div class="col-auto">
+                        <button type="submit" (click)="deleteprod(item.id)" class="btn btn-danger btn-round">
+                            delete prod</button>
+                    </div>
+
+
+                    <div class="col-12" *ngIf="item.image2 != 'null' || item.image3 != 'null' || item.image4 != 'null'">
+                        <label>ADDITIONAL DATA & ACCESSORIES</label>
+                    </div>
+                    <div class="col-4" *ngIf="item.image2 != 'null'">
+                        <img [src]="apiService.BASE_IMAGE_URL + item.image2" loading="lazy"
+                            style="width: 100%; height: 200px" />
+                    </div>
+
+                    <div class="col-4" *ngIf="item.image3 != 'null'">
+                        <img [src]="apiService.BASE_IMAGE_URL + item.image3" loading="lazy"
+                            style="width: 100%; height: 200px" />
+                    </div>
+
+                    <div class="col-4" *ngIf="item.image4 != 'null'">
+                        <img [src]="apiService.BASE_IMAGE_URL + item.image4" loading="lazy"
+                            style="width: 100%; height: 200px" />
+                    </div>
+
+                    <hr>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<!--modals starts from here-->
+
+
+<!--<button class="btn btn-lg btn-outline-primary" (click)="openEditTeacher()">Launch demo modal</button>-->
+
+<hr>
+
+<!--<pre>{{ closeResult }}</pre>-->
+<!--modals end from here-->

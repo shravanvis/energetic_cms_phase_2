@@ -1,0 +1,53 @@
+<!-- <p>add-global-resources works!</p> -->
+<div class="m-0 p-0">
+    <div class="card">
+        <div class="card-header">
+            <div style="display: flex">
+                <h4 style="flex-grow: 1" class="card-title">Global Resources</h4>
+                <div class="update ml-auto mr-auto">
+                    <button type="submit" (click)="addnew()" class="btn btn-primary btn-round">Add
+                        Resources</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+
+    </div>
+</div>
+<div class="modal-body">
+    <div class="table-responsive">
+        <table class="table">
+            <thead class=" text-primary">
+                <th>
+                    Name
+                </th>
+                <th>
+                    image
+                </th>
+                <th>
+                    Action
+                </th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of list_cat; index as i">
+                    <td> {{item.title}} </td>
+                    <td> <a [href]="apiService.BASE_IMAGE_URL + item.pdf" target="_blank"> {{item.pdf}} </a> </td>
+                    <td class="text-right">
+                        <div style="display: flex;text-align: right">
+                            <p class="text-success" (click)="editres(item)">EDIT</p>
+                            <p style="margin-left: 10px;" class="text-danger" (click)="deleteres(item.id)">
+                                DELETE</p>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="modal-footer">
+        <button (click)="close()" class="btn btn-primary btn-round" type="button">
+            Close
+        </button>
+    </div>
+</div>

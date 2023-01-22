@@ -1,0 +1,56 @@
+<!-- <p>productretailers works!</p> -->
+<!-- <p>online-retailers works!</p> -->
+
+<div class="modal-body">
+    <button (click)="close()" aria-label="Close" class="close" style="zoom: 1.2; outline: none;" type="button">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <br>
+    <br>
+    <div class="form-group">
+        <select class="form-control" [(ngModel)]="retail_id">
+            <option [value]="data.id" *ngFor="let data of Retailers">{{data.title}}</option>
+        </select>
+    </div>
+    <button class="btn btn-sm btn-outline-primary" (click)="addret()">Add Online Retailers</button>
+
+    <hr>
+
+
+    <div class="table-responsive">
+        <table class="table">
+            <thead class=" text-primary">
+                <th>
+                    Title
+                </th>
+                <th>
+                    Image
+                </th>
+                <!-- <th>
+                    Description
+                </th>
+                <th>
+                    Link
+                </th> -->
+                <th>
+                    Action
+                </th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of prodidRetailers; index as i">
+                    <td> {{item.title}} </td>
+                    <td><img [src]="apiService.BASE_IMAGE_URL + item.image" style="width: 50px; height: 50px" /> </td>
+                    <!-- <td> {{item.description}} </td>
+                    <td style="max-width: 100px;"> {{item.more}} </td> -->
+                    <td class="text-right">
+                        <div style="display: flex;text-align: right">
+                            <!-- <p class="text-success" (click)="editret(item)">EDIT</p> -->
+                            <p style="margin-left: 10px;" class="text-danger" (click)="deleteonlineRetailers(item.id)">
+                                DELETE</p>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

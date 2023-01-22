@@ -1,0 +1,31 @@
+<!-- <p>customersupport works!</p> -->
+<div class="card">
+    <div class="card-body table-responsive">
+        <table class="table">
+            <thead class="text-primary">
+                <tr>
+                    <th>name</th>
+                    <th>email</th>
+                    <th>contact_type</th>
+                    <th>message</th>
+                    <th>location</th>
+                    <th>interest</th>
+                    <!-- <th>subject</th> -->
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of data; index as i">
+                    <td> {{item.name}} </td>
+                    <td> {{item.email}} </td>
+                    <td> {{item.contact_type}} </td>
+                    <td> {{item.message}} </td>
+                    <td> {{item.location}} </td>
+                    <!-- <td> {{item.interest[0]}} </td> -->
+                    <td> {{item.c_name}} </td>
+
+                    <!-- <td> {{item.subject}} </td> -->
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

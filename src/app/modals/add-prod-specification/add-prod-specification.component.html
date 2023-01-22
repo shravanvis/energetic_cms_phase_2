@@ -1,0 +1,65 @@
+<!-- <p>add-prod-specification works!</p> -->
+<div class="modal-body">
+    <button (click)="close()" aria-label="Close" class="close" style="zoom: 1.2; outline: none;" type="button">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <br>
+    <br>
+    <div class="row m-4">
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                <div class="form-group">
+                    <label>Name</label>
+                    <select class="form-control" [(ngModel)]="name" aria-label="Default select example">
+                        <option value="Order Number">Order Number</option>
+                        <option value="Model Number">Model Number</option>
+                        <option value="Base Type">Base Type</option>
+                        <option value="Configuration">Configuration</option>
+                        <option value="Body color/Finish">Body color/Finish</option>
+                        <option value="Optical Distribution">Optical Distribution</option>
+                        <option value="Lumen Output">Lumen Output</option>
+                        <option value="Luminous Efficacy">Luminous Efficacy</option>
+                        <option value="Input Power">Input Power</option>
+                        <option value="Equivalent Wattage">Equivalent Wattage</option>
+                        <option value="Input Voltage">Input Voltage</option>
+                        <option value="Power Factor">Power Factor</option>
+                        <option value="THD">THD</option>
+                        <option value="Color Temp (CCT)">Color Temp (CCT)</option>
+                        <option value="Color Rend (CRI)">Color Rend (CRI)</option>
+                        <option value="Lifetime Rating">Lifetime Rating</option>
+                        <option value="Warranty">Warranty</option>
+                        <option value="Dimmability">Dimmability</option>
+                        <option value="Operating Temp">Operating Temp</option>
+                        <option value="Environment">Environment</option>
+                        <option value="Enclosed Install">Enclosed Install</option>
+                        <option value="Certification(s)">Certification(s)</option>
+                        <option value="Weight">Weight</option>
+                        <option value="Dimensions">Dimensions</option>
+                        <option value="Beam Angle">Beam Angle</option>
+                        <option value="Energy Star">Energy Star</option>
+                        <option value="Safety Cert">Safety Cert</option>
+                        <option value="Watts (W)">Watts (W)</option>
+                        <option value="CCT (K)">CCT (K)</option>
+                        <option value="Voltage (V)">Voltage (V)</option>
+                        <option value="Listings">Listings</option>
+                        <option value="DLC">DLC</option>
+                        <option value="Emergency_Battery">Emergency Battery</option>
+                        <option value="Motion_Sensors">Motion Sensors</option>
+                        <option value="LLLC">LLLC</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                <div class="form-group">
+                    <label>Value</label>
+                    <input [(ngModel)]="value" class="form-control" placeholder="Enter value" type="text">
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button (click)="save()" class="btn btn-outline-dark" type="button">save</button>
+            </div>
+        </div>
+    </div>
+</div>

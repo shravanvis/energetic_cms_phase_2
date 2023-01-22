@@ -1,0 +1,6 @@
+input, textarea{
+    border: solid 1px lightgrey;
+}
+textarea{
+    width: 100%;
+}

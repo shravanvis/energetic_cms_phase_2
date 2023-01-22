@@ -1,0 +1,67 @@
+<!-- <p>online-retailers works!</p> -->
+<button class="btn btn-sm btn-outline-primary" (click)="addcontact()">Add Contact</button>
+
+<hr>
+
+<pre>{{ closeResult }}</pre>
+
+<div class="card">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table">
+                <thead class="text-primary">
+                    <th>
+                        Title
+                    </th>
+                    <th>
+                        Location
+                    </th>
+                    <th>
+                        Tollfree
+                    </th>
+                    <th>
+                        Phone
+                    </th>
+                    <th>
+                        Fax
+                    </th>
+                    <th>
+                        Email
+                    </th>
+                    <th>
+                        Iframe
+                    </th>
+                    <th>
+                        Direction
+                    </th>
+                    <th>
+                        Type
+                    </th>
+                    <th>
+                        Action
+                    </th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of ContactUs; index as i">
+                        <td> {{item.title}} </td>
+                        <td>{{item.location}}</td>
+                        <td> {{item.tollfree}} </td>
+                        <td> {{item.phone}} </td>
+                        <td> {{item.fax}} </td>
+                        <td> {{item.email}} </td>
+                        <td> {{item.iframe | slice:0:50}} </td>
+                        <td> {{item.direction}} </td>
+                        <td> {{item.type}} </td>
+                        <td class="text-right">
+                            <div style="display: flex;text-align: right">
+                                <p class="text-success" (click)="editContactUs(item)">EDIT</p>
+                                <p style="margin-left: 10px;" class="text-danger" (click)="deleteContactUs(item.id)">
+                                    DELETE</p>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

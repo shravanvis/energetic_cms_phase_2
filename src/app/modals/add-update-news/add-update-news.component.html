@@ -1,0 +1,42 @@
+<!-- <p>add-update-news works!</p> -->
+<!-- <p>add-update-online-retailers works!</p> -->
+<div class="modal-body">
+    <button (click)="close()" aria-label="Close" class="close" style="zoom: 1.2; outline: none;" type="button">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+            <div class="form-group">
+                <label>Name</label>
+                <input [(ngModel)]="title" class="form-control" placeholder="Enter Name" type="text">
+            </div>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+            <label>Image Size: 1336 x 610 px</label>
+            <div style="position: relative;">
+                <img [src]="showImageUrl"
+                    style="width: 100px; height: 100px; border-radius: 10px; margin: auto; display: block;" alt="">
+
+                <label class="btn btn-default btn-sm center-block btn-file m-0" style="position: absolute; bottom: -5px;
+                        left: 50%;
+                        transform: translate(0%, -50%, 0%, -50%);">
+                    <i class="fa fa-upload fa-2x text-white" aria-hidden="true"></i>
+                    <input type="file" (change)="selectImage($event)" style="display: none;">
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="form-group">
+                <label>Description</label>
+                <angular-editor [placeholder]="'Enter text here...'" [(ngModel)]="description"></angular-editor>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button (click)="savenews()" class="btn btn-outline-dark" type="button">Save</button>
+    </div>
+</div>

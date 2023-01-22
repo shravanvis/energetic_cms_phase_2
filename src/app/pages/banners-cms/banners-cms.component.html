@@ -1,0 +1,37 @@
+<!-- <p>banners-cms works!</p> -->
+<div class="card">
+    <div class="card-body">
+        <label for="about">global banner</label>
+
+        <div class="form-group">
+            <label>select page</label>
+            <select class="form-control" aria-label="Default select example" (change)="onchange()"
+                [(ngModel)]="pageName">
+                <option *ngFor="let item of allData | slice:1; index as i" [value]="item.page">{{item.title}}</option>
+            </select>
+        </div>
+
+        <div class="form-group" *ngIf="show_Input">
+            <label>title</label>
+            <input [(ngModel)]="title" class="form-control" placeholder="Enter Name" type="text">
+        </div>
+        <div class="form-group" *ngIf="show_Input">
+            <label>description</label>
+            <input [(ngModel)]="description" class="form-control" placeholder="Enter Name" type="text">
+        </div>
+        <div style="position: relative;">
+            <label>Image Size: 1333 x 400 px</label>
+            <img [src]="show_ImageUrl"
+                style="width: 500px; height: 250px; border-radius: 10px; margin: auto; display: block;" alt="">
+            <label class="btn btn-default btn-sm center-block btn-file m-0" style="position: absolute; bottom: -5px;
+                                    left: 50%;
+                                    transform: translate(0%, -50%, 0%, -50%);">
+                <i class="fa fa-upload fa-2x text-white" aria-hidden="true"></i>
+                <input type="file" (change)="selectbanner($event)" style="display: none;">
+            </label>
+        </div>
+
+        <button class="btn btn-primary btn-round" (click)="Save()">Save banner</button>
+
+    </div>
+</div>

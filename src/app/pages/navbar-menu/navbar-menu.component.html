@@ -1,0 +1,63 @@
+<!-- <p>navbar-menu works!</p> -->
+
+<div class="card">
+    <div class="card-body">
+
+        <div class="form-group">
+            <input class="form-check-input" type="checkbox" id="products" [(ngModel)]="products"
+                (change)="updateproduct()">
+            <label class="form-check-label" for="products">
+                products
+            </label>
+        </div>
+        <div class="form-group">
+            <input class="form-check-input" type="checkbox" id="about_us" [(ngModel)]="about_us"
+                (change)="updateabout_us()">
+            <label class="form-check-label" for="about_us">
+                about_us
+            </label>
+        </div>
+        <div class="form-group">
+            <input class="form-check-input" type="checkbox" id="applications" [(ngModel)]="applications"
+                (change)="updateapplications()">
+            <label class="form-check-label" for="applications">
+                applications
+            </label>
+        </div>
+        <div class="form-group">
+            <input class="form-check-input" type="checkbox" id="wheretobuy" [(ngModel)]="wheretobuy"
+                (change)="updatewheretobuy()">
+            <label class="form-check-label" for="wheretobuy">
+                wheretobuy
+            </label>
+        </div>
+        <div class="form-group">
+            <input class="form-check-input" type="checkbox" id="showResources" [(ngModel)]="showResources"
+                (change)="updateResources()">
+            <label class="form-check-label" for="showResources">
+                showResources
+            </label>
+        </div>
+        <div class="form-group">
+            <input class="form-check-input" type="checkbox" id="customer_support" [(ngModel)]="customer_support"
+                (change)="updatecustomer_support()">
+            <label class="form-check-label" for="customer_support">
+                customer_support
+            </label>
+        </div>
+        <div class="form-group">
+            <input class="form-check-input" type="checkbox" id="virtual_showroom" [(ngModel)]="virtual_showroom"
+                (change)="updatevirtual_showroom()">
+            <label class="form-check-label" for="virtual_showroom">
+                virtual_showroom
+            </label>
+        </div>
+        <div class="form-group">
+            <input class="form-check-input" type="checkbox" id="login" [(ngModel)]="login" (change)="updatelogin()">
+            <label class="form-check-label" for="login">
+                login
+            </label>
+        </div>
+
+    </div>
+</div>

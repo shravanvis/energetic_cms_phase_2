@@ -1,0 +1,45 @@
+<!-- <p>light-design-layout works!</p> -->
+<div class="card">
+    <div class="card-body">
+        <table class="table table-responsive">
+            <thead class=" text-primary">
+                <th>name</th>
+                <th>email</th>
+                <th>phone</th>
+                <th>role</th>
+                <th>project name</th>
+                <th>project address</th>
+                <th>city</th>
+                <th>zipcode</th>
+                <th>state</th>
+                <th>job starting</th>
+                <th>need layout</th>
+                <th>budget</th>
+                <th>fixture</th>
+                <th>description</th>
+                <th>created at</th>
+                <th>Attach</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of data; index as i">
+                    <td> {{item.firstname}} {{item.lastname}} </td>
+                    <td> {{item.email}} </td>
+                    <td> {{item.phone}} </td>
+                    <td> {{item.role}} </td>
+                    <td> {{item.projectname}} </td>
+                    <td> {{item.projectaddress}} </td>
+                    <td> {{item.city}} </td>
+                    <td> {{item.zipcode}} </td>
+                    <td> {{item.state}} </td>
+                    <td> {{item.jobstarting}} </td>
+                    <td> {{item.needlayout}} </td>
+                    <td> {{item.budget}} </td>
+                    <td> {{item.fixture}} </td>
+                    <td> {{item.description}} </td>
+                    <td> {{item.created_at | date}} </td>
+                    <td><img [src]="apiService.BASE_IMAGE_URL + item.image" style="width: 50px; height: 50px" /> </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

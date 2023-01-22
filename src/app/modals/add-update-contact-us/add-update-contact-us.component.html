@@ -1,0 +1,83 @@
+<!-- <p>add-update-online-retailers works!</p> -->
+<div class="modal-body">
+    <button (click)="close()" aria-label="Close" class="close" style="zoom: 1.2; outline: none;" type="button">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+            <div class="form-group">
+                <label>Title</label>
+                <input [(ngModel)]="title" class="form-control" placeholder="Enter title" type="text">
+            </div>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+        	<div class="form-group">
+                <label>Location</label>
+             <input [(ngModel)]="location" class="form-control" placeholder="Enter location" type="text">
+         </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+            <div class="form-group">
+                <label>Tollfree</label>
+                <input [(ngModel)]="tollfree" class="form-control" placeholder="Enter tollfree" type="text">
+            </div>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+            <div class="form-group">
+                <label>Phone</label>
+                <input [(ngModel)]="phone" class="form-control" placeholder="Enter phone" type="text">
+            </div>
+        </div>
+    </div>
+     <div class="row">
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+            <div class="form-group">
+                <label>Email</label>
+                <input [(ngModel)]="email" class="form-control" placeholder="Enter email" type="text">
+            </div>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+            <div class="form-group">
+                <label>Fax</label>
+                <input [(ngModel)]="fax" class="form-control" placeholder="Enter fax" type="text">
+            </div>
+        </div>
+    </div>
+     <div class="row">
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+            <div class="form-group">
+                <label>Direction</label>
+                <input [(ngModel)]="direction" class="form-control" placeholder="Enter direction" type="text">
+            </div>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+            <div class="form-group">
+                <label>Iframe</label>
+                <input [(ngModel)]="iframe" class="form-control" placeholder="Enter iframe" type="text">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+       
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+            <div class="form-group">
+                <label>Type</label>
+                <select class="form-control" aria-label="Default select example" [(ngModel)]="type">
+                    <!-- <option>Open this select menu</option> -->
+                    <option [value]="'general'">General</option>
+                    <option [value]="'technical'">Technical</option>
+                    <option [value]="'application'">Customer Support</option>
+                    <option [value]="'directions'">Directions And Contacts</option>
+                   
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button (click)="saveContact()" class="btn btn-outline-dark" type="button">Save</button>
+    </div>
+</div>

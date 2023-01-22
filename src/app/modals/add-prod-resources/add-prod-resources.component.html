@@ -1,0 +1,26 @@
+<!-- <p>add-prod-resources works!</p> -->
+<!-- <p>add-prod-specification works!</p> -->
+<div class="modal-body">
+    <button (click)="close()" aria-label="Close" class="close" style="zoom: 1.2; outline: none;" type="button">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <br>
+    <br>
+    <div class="m-4">
+        <div class="form-group">
+            <label>Name</label>
+            <input [(ngModel)]="name" class="form-control" placeholder="Enter Name" type="text">
+        </div>
+
+        <br>
+
+        <div>
+            <label>File</label>
+            <br>
+            <input type="file" (change)="onselect($event)">
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button (click)="save()" class="btn btn-outline-dark" type="button">save</button>
+    </div>
+</div>

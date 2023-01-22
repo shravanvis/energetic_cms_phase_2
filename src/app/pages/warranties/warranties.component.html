@@ -1,0 +1,88 @@
+<!-- <p>warranties works!</p> -->
+<div class="card">
+    <div class="card-header">
+        <!-- <h3 class="card-title">Warranties</h3> -->
+        <button class="btn btn-sm btn-primary" (click)="saveCat(content, null)">Add Category </button>
+
+    </div>
+    <div class="card-body">
+        <div class="row justify-content-between m-0 p-0">
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12">
+                <div>
+                    <p class=" text-primary">category Name</p>
+                </div>
+            </div>
+            <div class="col-xl col-lg-3 col-md-3 col-sm-6 col-12">
+                <div>
+                    <p class=" text-primary">Description & Years</p>
+                </div>
+            </div>
+            <div class="col-xl-auto col-lg-3 col-md-3 col-sm-6 col-12">
+                <div>
+                    <p class=" text-primary">Actions</p>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-between m-0 p-0" *ngFor="let item of list_waranties; index as i">
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12">
+                <div class="d-flex">
+                    <p class="m-2 text-dark">{{item.category.name}}</p>
+                    <button class="btn btn-sm btn-warning m-2 px-2" style="width: fit-content; height: fit-content;"
+                        ngbTooltip="Edit Name" (click)="saveCat(content, item)"><i class="fa fa-pencil-square"
+                            aria-hidden="true"></i></button>
+                </div>
+            </div>
+            <div class="col-xl col-lg-3 col-md-3 col-sm-6 col-12">
+                <div *ngFor="let data of item.detail" class="d-flex">
+                    <p class="m-2 text-dark">{{data.description }} & {{data.years }} years</p>
+                    <p><button class="btn btn-sm btn-danger m-2" ngbTooltip="Delete descriptions and years"
+                            (click)="deletedesc(data.id)"><i class="fa fa-trash-o" aria-hidden="true"></i></button></p>
+                </div>
+            </div>
+            <div class="col-xl-auto col-lg-3 col-md-3 col-sm-6 col-12">
+                <div>
+                    <button class="btn btn-sm btn-warning" ngbTooltip="Add descriptions and years" (click)="savedesc(AddDescription, item)"><i
+                            class="fa fa-plus" aria-hidden="true"></i>
+                        Description</button>
+                    <button class="btn btn-sm btn-danger" ngbTooltip="Delete" (click)="deleteCat(item.category.id)"><i class="fa fa-trash-o"
+                            aria-hidden="true"></i></button>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </div>
+</div>
+
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Category</h4>
+        <button type="button" class="btn-close btn-sm btn" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <i class="fa fa-close"></i>
+        </button>
+    </div>
+    <div class="modal-body">
+        <input type="text" class="form-control" placeholder="Category" [(ngModel)]="catname">
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" *ngIf="AddBtnCat" (click)="AddCat()">Add</button>
+        <button type="button" class="btn btn-outline-dark" *ngIf="updateBtnCat" (click)="EditCat()">Edit</button>
+    </div>
+</ng-template>
+
+<ng-template #AddDescription let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Description and year</h4>
+        <button type="button" class="btn-close btn-sm btn" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <i class="fa fa-close"></i>
+        </button>
+    </div>
+    <div class="modal-body">
+        <input type="text" class="form-control" placeholder="Description" [(ngModel)]="description">
+        <br>
+        <input type="text" class="form-control" placeholder="Years" [(ngModel)]="years">
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="AddDes()">Add</button>
+    </div>
+</ng-template>

@@ -1,0 +1,106 @@
+<div class="card">
+    <div class="card-body">
+
+
+        <label for=""><b> Banners </b></label>
+
+        <div class="form-group">
+            <label>Product URL <br> (please only add the details after energetic.com not with energetic.com in URL)</label>
+            <input [(ngModel)]="title1" class="form-control" placeholder="Enter Name" type="text">
+        </div>
+        <!-- <div class="form-group">
+            <label>description</label>
+            <input [(ngModel)]="description1" class="form-control" placeholder="Enter Name" type="text">
+        </div> -->
+
+        <div style="position: relative;">
+            <label>Image Size: 6054 x 2458 px</label>
+            <img [src]="showImage1Url"
+                style="width: 500px; height: 250px; border-radius: 10px; margin: auto; display: block;" alt="">
+            <label class="btn btn-default btn-sm center-block btn-file m-0" style="position: absolute; bottom: -5px;
+                                    left: 50%;
+                                    transform: translate(0%, -50%, 0%, -50%);">
+                <i class="fa fa-upload fa-2x text-white" aria-hidden="true"></i>
+                <input type="file" (change)="onselectimage1($event)" style="display: none;">
+            </label>
+        </div>
+
+        <div class="form-group">
+            <button (click)="save1()" class="btn btn-primary btn-round">SAVE banner</button>
+        </div>
+
+        <hr>
+
+
+        <div class="form-group">
+            <label>Product URL</label>
+            <input [(ngModel)]="title2" class="form-control" placeholder="Enter Name" type="text">
+        </div>
+        <!-- <div class="form-group">
+            <label>description</label>
+            <input [(ngModel)]="description2" class="form-control" placeholder="Enter Name" type="text">
+        </div> -->
+
+
+        <div style="position: relative;">
+            <label>Image Size: 6054 x 2458 px</label>
+            <img [src]="showImage2Url"
+                style="width: 500px; height: 250px; border-radius: 10px; margin: auto; display: block;" alt="">
+            <label class="btn btn-default btn-sm center-block btn-file m-0" style="position: absolute; bottom: -5px;
+                                    left: 50%;
+                                    transform: translate(0%, -50%, 0%, -50%);">
+                <i class="fa fa-upload fa-2x text-white" aria-hidden="true"></i>
+                <input type="file" (change)="onselectimage2($event)" style="display: none;">
+            </label>
+        </div>
+
+        <div class="form-group">
+            <button (click)="save2()" class="btn btn-primary btn-round">SAVE banner</button>
+        </div>
+
+        <hr>
+
+
+        <div class="form-group">
+            <label>Product URL</label>
+            <input [(ngModel)]="title3" class="form-control" placeholder="Enter Name" type="text">
+        </div>
+        <!-- <div class="form-group">
+            <label>description</label>
+            <input [(ngModel)]="description3" class="form-control" placeholder="Enter Name" type="text">
+        </div> -->
+
+        <div style="position: relative;">
+            <label>Image Size: 6054 x 2458 px</label>
+            <img [src]="showImage3Url"
+                style="width: 500px; height: 250px; border-radius: 10px; margin: auto; display: block;" alt="">
+            <label class="btn btn-default btn-sm center-block btn-file m-0" style="position: absolute; bottom: -5px;
+                                    left: 50%;
+                                    transform: translate(0%, -50%, 0%, -50%);">
+                <i class="fa fa-upload fa-2x text-white" aria-hidden="true"></i>
+                <input type="file" (change)="onselectimage3($event)" style="display: none;">
+            </label>
+        </div>
+
+        <div class="form-group">
+            <button (click)="save3()" class="btn btn-primary btn-round">SAVE banner</button>
+        </div>
+
+
+
+        <p>Video Section</p>
+        <div style="position: relative;">
+            <input type="file" (change)="selectvideo($event)">
+        </div>
+        <br>
+        <video width="400" style="height: fit-content;" controls>
+            <source src="{{showvideoUrl}}" type="video/mp4">
+            <source src="{{showvideoUrl}}" type="video/ogg">
+            Your browser does not support HTML video.
+        </video>
+        <br>
+        <button class="btn btn-sm btn-danger" (click)="deletevideo()">Delete video</button>
+        <br>
+        <button class="btn btn-sm btn-primary" [disabled]="disable" (click)="savevideo()">Save video</button>
+    </div>
+</div>
