@@ -17,12 +17,12 @@
 <div class="modal-body">
 
     <div class="form-group">
-        <label>subname</label>
+        <label>Name</label>
         <input [(ngModel)]="subsubname" class="form-control" placeholder="Enter subname" type="text">
     </div>
 
     <div class="form-group">
-        <label>description</label>
+        <label>Description</label>
         <textarea [(ngModel)]="description" class="form-control" placeholder="Enter description" type="text"></textarea>
     </div>
 
@@ -67,8 +67,10 @@
     <hr>
 
     <div style="position: relative;">
+        <label>Banner size: 6054 x 2458 px</label>
+
         <img [src]="showbannerUrl"
-            style="width: 100px; height: 100px; border-radius: 10px; margin: auto; display: block;" alt="">
+            style="width: 200px; height: 100px; border-radius: 10px; margin: auto; display: block;" alt="">
         <label class="btn btn-default btn-sm center-block btn-file m-0" style="position: absolute; bottom: -5px;
                     left: 50%;
                     transform: translate(0%, -50%, 0%, -50%);">

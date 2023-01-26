@@ -49,6 +49,7 @@ export const CHEF_ROUTES: RouteInfo[] = [
     { path: '/alerts', title: 'alerts', icon: 'nc-tile-56', class: '' },
     { path: '/levels', title: 'levels', icon: 'nc-tile-56', class: '' },
     { path: '/reordering-products', title: 'reordering products', icon: 'nc-tile-56', class: '' },
+    { path: '/find', title: 'find', icon: 'nc-tile-56', class: '' },
 
 ];
 

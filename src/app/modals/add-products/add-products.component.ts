@@ -72,7 +72,7 @@ export class AddProductsComponent implements OnInit {
     { id: 5, name: 'TITLE 24 Qualified' },
     { id: 6, name: 'TITLE 24 JA8' },
   ]
-
+  selectedApp: Array<number> = [];
   ngOnInit(): void {
     if (this.prod != null) {
       this.updateview = true;
@@ -91,7 +91,7 @@ export class AddProductsComponent implements OnInit {
       //this.listings_id = this.prod.special_product_id;
       this.is_active = this.prod.is_active;
       this.description = this.prod.description;
-      this.application_id = this.prod.application_id;
+      // this.application_id = this.prod.application_id;
       this.showImageUrl = this.apiService.BASE_IMAGE_URL + this.prod.image;
       this.active = this.prod.is_active == '1' ? true : false;
       this.new_pro = this.prod.is_new == '1' ? true : false;
@@ -103,6 +103,10 @@ export class AddProductsComponent implements OnInit {
       this.application = this.prod.application;
       this.datasheetURL = this.apiService.BASE_IMAGE_URL + this.prod.datasheet;
       this.showBannerUrl = this.apiService.BASE_IMAGE_URL + this.prod.banner;
+
+      let application_id = JSON.parse('[' + this.prod.application_id.replace(/,\s*,/, ',0,') + ']')
+      this.selectedApp = application_id
+      console.log(this.selectedApp)
     }
     this.hidedatasheet = true;
     this.cat();
@@ -110,9 +114,15 @@ export class AddProductsComponent implements OnInit {
     // this.subcat();
     // this.subsubcat();
     this.applications();
+
+    // this.selectedApp = [1, 2, 6, 11, 14];
   }
 
-
+  onSelect(item) {
+    let data = [];
+    (data.push(item)).toString();
+    this.appl_id_array = data;
+  }
   config: AngularEditorConfig = {
     editable: true,
     spellcheck: true,
@@ -170,7 +180,13 @@ export class AddProductsComponent implements OnInit {
 
   applications() {
     this.apiService.getAPI(this.apiService.BASE_URL + 'applications').then((result) => {
-      this.allapplication = result.result;
+      let data = result.result;
+      for (let i = 0; i < data.length; i++) {
+        this.allapplication.push({
+          id: data[i].id,
+          display: data[i].title
+        })
+      }
     })
   }
 

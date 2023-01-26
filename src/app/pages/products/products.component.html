@@ -78,7 +78,7 @@
                         <br>
                         <img [src]="apiService.BASE_IMAGE_URL + item.banner" style="width: 400px; height: 200px" />
                     </div>
-                    <div class="col-6"></div>
+                    <!-- <div class="col-6"></div> -->
                     <div class="col-auto">
                         <button type="submit" (click)="addSpecialPro(item.id)" class="btn btn-success btn-round">
                             Special Product</button>
@@ -108,11 +108,11 @@
                             Add Accessories</button>
                     </div>
                     <div class="col-auto">
-                        <button type="submit" (click)="addRetailer(item.id)" class="btn btn-primary btn-round">
+                        <button type="submit" (click)="addRetailer(item.id)" class="btn btn-success btn-round">
                             add Retailer</button>
                     </div>
                     <div class="col-auto">
-                        <button type="submit" (click)="updateprod(item)" class="btn btn-primary btn-round">
+                        <button type="submit" (click)="updateprod(item)" class="btn btn-success btn-round">
                             update prod</button>
                     </div>
                     <div class="col-auto">

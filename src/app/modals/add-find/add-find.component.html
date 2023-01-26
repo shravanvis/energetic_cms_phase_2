@@ -1,0 +1,55 @@
+<!-- <p>add-find works!</p> -->
+<div class="modal-body">
+    <button (click)="close()" aria-label="Close" class="close" style="zoom: 1.2; outline: none;" type="button">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="form-group">
+                <label>name</label>
+                <input [(ngModel)]="name" class="form-control" placeholder="Enter name" type="text">
+            </div>
+        </div>
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="form-group">
+                <label>address</label>
+                <input [(ngModel)]="address" class="form-control" placeholder="Enter address" type="text">
+            </div>
+        </div>
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="form-group">
+                <label>city</label>
+                <input [(ngModel)]="city" class="form-control" placeholder="Enter city" type="text">
+            </div>
+        </div>
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="form-group">
+                <label>phone</label>
+                <input [(ngModel)]="phone" class="form-control" placeholder="Enter phone" type="text">
+            </div>
+        </div>
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="form-group">
+                <label>state</label>
+                <input [(ngModel)]="state" class="form-control" placeholder="Enter state" type="text">
+            </div>
+        </div>
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="form-group">
+                <label>zip</label>
+                <input [(ngModel)]="zip" class="form-control" placeholder="Enter zip" type="text">
+            </div>
+        </div>
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="form-group">
+                <label>url</label>
+                <textarea [(ngModel)]="url" class="form-control" placeholder="Enter url" type="text"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button (click)="save()" class="btn btn-outline-dark" type="button">Save</button>
+    </div>
+</div>

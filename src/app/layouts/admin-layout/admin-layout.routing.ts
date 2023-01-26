@@ -42,6 +42,7 @@ import { CustomersComponent } from 'app/pages/customers/customers.component';
 import { AgentsComponent } from 'app/pages/agents/agents.component';
 import { LevelsComponent } from 'app/pages/levels/levels.component';
 import { ReorderingProductsComponent } from 'app/pages/reordering-products/reordering-products.component';
+import { FindStoreComponent } from 'app/pages/find-store/find-store.component';
 
 
 
@@ -98,6 +99,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'alerts', component: AlertsComponent },
     { path: 'levels', component: LevelsComponent },
     { path: 'reordering-products', component: ReorderingProductsComponent },
+    { path: 'find', component: FindStoreComponent },
 
 ];
 

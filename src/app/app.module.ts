@@ -101,6 +101,9 @@ import { ProdaccessoriesComponent } from './modals/prodaccessories/prodaccessori
 import { AddGlobalResourcesComponent } from './modals/add-global-resources/add-global-resources.component';
 import { ProductretailersComponent } from './modals/productretailers/productretailers.component';
 import { ReorderingProductsComponent } from './pages/reordering-products/reordering-products.component';
+import { NgxMultipleSelectModule } from 'ngx-multiple-select';
+import { FindStoreComponent } from './pages/find-store/find-store.component';
+import { AddFindComponent } from './modals/add-find/add-find.component';
 
 @NgModule({
     declarations: [
@@ -186,6 +189,8 @@ import { ReorderingProductsComponent } from './pages/reordering-products/reorder
         AddGlobalResourcesComponent,
         ProductretailersComponent,
         ReorderingProductsComponent,
+        FindStoreComponent,
+        AddFindComponent,
     ],
     imports: [
         BrowserAnimationsModule,
@@ -212,7 +217,8 @@ import { ReorderingProductsComponent } from './pages/reordering-products/reorder
             checkedLabel: 'on',
             uncheckedLabel: 'off'
         }),
-        DragDropModule
+        DragDropModule,
+        NgxMultipleSelectModule
     ],
     providers: [{ provide: HTTP_INTERCEPTORS, useClass: HttpinterceptorService, multi: true }],
     bootstrap: [AppComponent]
