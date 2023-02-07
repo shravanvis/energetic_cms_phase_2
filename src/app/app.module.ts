@@ -104,6 +104,7 @@ import { ReorderingProductsComponent } from './pages/reordering-products/reorder
 import { NgxMultipleSelectModule } from 'ngx-multiple-select';
 import { FindStoreComponent } from './pages/find-store/find-store.component';
 import { AddFindComponent } from './modals/add-find/add-find.component';
+import { ScrollingModule } from "@angular/cdk/scrolling";
 
 @NgModule({
     declarations: [
@@ -218,7 +219,8 @@ import { AddFindComponent } from './modals/add-find/add-find.component';
             uncheckedLabel: 'off'
         }),
         DragDropModule,
-        NgxMultipleSelectModule
+        NgxMultipleSelectModule,
+        ScrollingModule
     ],
     providers: [{ provide: HTTP_INTERCEPTORS, useClass: HttpinterceptorService, multi: true }],
     bootstrap: [AppComponent]

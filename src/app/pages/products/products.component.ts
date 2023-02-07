@@ -1,11 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { AddAccessoriesComponent } from 'app/modals/add-accessories/add-accessories.component';
 import { AddGlobalResourcesComponent } from 'app/modals/add-global-resources/add-global-resources.component';
-import { AddProdDimensionsComponent } from 'app/modals/add-prod-dimensions/add-prod-dimensions.component';
-import { AddProdResourcesComponent } from 'app/modals/add-prod-resources/add-prod-resources.component';
-import { AddProdSpecificationComponent } from 'app/modals/add-prod-specification/add-prod-specification.component';
 import { AddProductsComponent } from 'app/modals/add-products/add-products.component';
 import { ProdaccessoriesComponent } from 'app/modals/prodaccessories/prodaccessories.component';
 import { ProdalldimensionsComponent } from 'app/modals/prodalldimensions/prodalldimensions.component';
